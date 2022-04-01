@@ -105,9 +105,16 @@ Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombe
 
 * Nous avons découpé le coeur en deux couches : 
   - la couche `application` qui contient tous les contrats : ports (interfaces) et les implémentations des ports d'entrée (ou "use case") et qui servent à orchestrer les entités.
-  - la couche `domain` qui contient les entités (au sens DDD, pas au sens JPA). En général des classes complexes (méthodes riches, relations entre les entités)
+  - la couche `domain` qui contient les entités (au sens DDD, pas au sens JPA). En général des classes complexes (méthodes riches, relations entre les entités)()
 
 *Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
+
+
+*
+L' archictecture hexagonale permet de séparer le code en couches en mettant la couche métier (domaine) au centre du projet. Les autres couches vont être séparées selon leur fonctionnalités; On a le côté gauche qui concerne toutes les interactions d'entrées avec l' application via les ports in c'est à dire le côté utilisateur.
+
+Le côté droit concerne ce dont l'application a besoin. On va retrouver toute la partie persistence, les appels au système de fichiers ou bien les appels HTTP aux autres applications dont dépend notre application.
+*
 
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
